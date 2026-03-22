@@ -3,13 +3,15 @@
   publish = "staticfiles"
 
 [functions]
+  # Aquí le decimos a Netlify que busque en tu nueva carpeta
+  directory = "netlify/functions"
   included_files = ["**/*.py", "**/templates/**", "**/static/**"]
+
+[functions.netlify_handler]
+  handler = "netlify_handler.handler"
+  runtime = "python3.x"
 
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/netlify_handler"
   status = 200
-
-[functions.netlify_handler]
-  handler = "netlify_handler.handler"
-  runtime = "python3.10"
