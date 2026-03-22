@@ -1,0 +1,15 @@
+[build]
+  command = "pip install -r requirements.txt && python manage.py collectstatic --no-input"
+  publish = "staticfiles"
+
+[functions]
+  included_files = ["**/*.py", "**/templates/**", "**/static/**"]
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/netlify_handler"
+  status = 200
+
+[functions.netlify_handler]
+  handler = "netlify_handler.handler"
+  runtime = "python3.10"
