@@ -1,0 +1,1 @@
+web: gunicorn bendicion_project.wsgi
