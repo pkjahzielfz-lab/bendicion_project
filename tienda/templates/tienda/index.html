@@ -57,7 +57,7 @@
             border-radius: 20px;
         }
 
-        /* Estilos para el carrusel (los que te pasé antes) */
+        /* Estilos para el carrusel */
         .productos-section {
             background: linear-gradient(135deg, #fcf8f2 0%, #fff 100%);
             padding: 80px 0;
@@ -181,6 +181,18 @@
             color: white;
             transform: translateY(-50%) scale(1.1);
         }
+
+        /* Estilos para la sección del mapa */
+        .mapa-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+
+        .mapa-container {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
     </style>
 </head>
 <body>
@@ -223,7 +235,7 @@
         </div>
     </main>
 
-    <!-- SECCIÓN DE PRODUCTOS - CARRUSEL (AGREGA ESTO) -->
+    <!-- SECCIÓN DE PRODUCTOS - CARRUSEL -->
     <section class="productos-section">
         <div class="container">
             <h2 style="color: #594433; font-weight: 800; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; position: relative;">
@@ -248,23 +260,32 @@
                 </button>
             </div>
         </div>
+    </section>
 
-</div> </main>
-            <div class="shadow-lg rounded-4 overflow-hidden" style="height: 450px;">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3814.743!2d-90.7128426!3d16.4200154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-            </div>
+    <!-- SECCIÓN DEL MAPA - CORREGIDA Y SEPARADA -->
+    <section class="mapa-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 style="color: #594433; font-weight: 800; font-size: 2.5rem; margin-bottom: 3rem; text-align: center; position: relative;">
+                        NUESTRA UBICACIÓN
+                        <span style="content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #8c6d46; border-radius: 2px;"></span>
+                    </h2>
+                    <div class="mapa-container shadow-lg rounded-4 overflow-hidden" style="height: 450px;">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3814.743!2d-90.7128426!3d16.4200154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1710000000000!5m2!1ses-419!2smx" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <footer class="text-center py-4 border-top bg-light">
         <p class="mb-0 text-muted">&copy; 2026 La Bendición de Dios - Ingeniería en TI (UTSelva)</p>
@@ -273,7 +294,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
-    <!-- TU ARCHIVO JAVASCRIPT - COLOCADO AQUÍ ANTES DE CERRAR BODY -->
+    <!-- TU ARCHIVO JAVASCRIPT -->
     <script src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
